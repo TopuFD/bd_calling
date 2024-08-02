@@ -3,8 +3,8 @@ import 'package:mytodo/utils/color.dart';
 
 List students = [];
 
-class Homepage extends StatelessWidget {
-  const Homepage({super.key});
+class HomeWorkOne extends StatelessWidget {
+  const HomeWorkOne({super.key});
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -58,14 +58,16 @@ class Homepage extends StatelessWidget {
               ),
             )),
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(
-            vertical: size.height * .01, horizontal: size.width * .03),
-        child: ListView.builder(
-            itemCount: students.length,
-            itemBuilder: (context, index) {
-              return students[index];
-            }),
+      body: Container(
+        width: double.infinity,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: size.width * .03,vertical: size.height * .02),
+          child: ListView.builder(
+              itemCount: students.length,
+              itemBuilder: (context, index) {
+                return students[index];
+              }),
+        ),
       ),
     );
   }
